@@ -11,31 +11,31 @@ redirect_from:
 
 Education
 ======
-* B.S. in Environmental Science and Geography, University of Maryland, Baltimore County (UMBC), 2024
+* B.S. in Environmental Science and Geography, University of Maryland, Baltimore County (UMBC), _2024_
   * Geographic Information Science Certificate Program
-* High School Diploma and International Baccalaureate Diploma, Edgewood High School, 2020
+* High School Diploma and International Baccalaureate Diploma, Edgewood High School, _2020_
 
 Work experience
 ======
-* Geographic Information System/Data Assistant, Baltimore Neighborhood Indicators Alliance (BNIA), July 2023 - Current
+* Geographic Information System/Data Assistant, __Baltimore Neighborhood Indicators Alliance (BNIA)__, _July 2023 - Current_
   * Analyzing and visualizing spatial data to understand how Baltimore City neighborhoods and overall quality of life
     change over time.
   * Current project on the Baltimore Head Start Community Needs Assessment report.
   * Evaluated impact indicators among the Mayor's Office of Recovery Programs/American Rescue Plan Act allocations.
 
-* Geographic Information System Intern, Hampton National Historic Site (NPS), Jun 2023 - Sept 2023
+* Geographic Information System Intern, __Hampton National Historic Site (NPS)__, _Jun 2023 - Sept 2023_
   * Conducting tree inventory on the historic site's forest edges using GIS (Trimble and Fieldmaps).
 
-* Tours and Experiences Aide, National Aquarium in Baltimore, August 2022 - May 2023
+* Tours and Experiences Aide, __National Aquarium in Baltimore__, _August 2022 - May 2023_
   * Facilitates daily tours and programs through thematic oral interpretation and conservation messaging.
  
-* Team Lead, Office of Sustainability’s Eco-Ambassador Program, Sept 2021 - Current
+* Team Lead, __Office of Sustainability’s Eco-Ambassador Program__, _Sept 2021 - Current_
   * Promotion of sustainable practices around UMBC’s campus through peer education as well as student leadership.
   * Current project on a compost residuals law initiative to increase waste diversion and reduce contamination.
   * Facilitated an Earth Day Celebration event in collaboration with local eco-organizations and vendors to connect
     students to sustainability in the greater Baltimore community.
  
-* Fieldwork Assistant for Dr. Matthew E Baker’s Research Project, ForestGEO Tree Inventory and Soil Microbiome Sampling, Oct 2021 - Jan 2023
+* Fieldwork Assistant for Dr. Matthew E Baker’s Research Project, __ForestGEO Tree Inventory and Soil Microbiome Sampling__, _Oct 2021 - Jan 2023_
   * Measuring tree girth, tagged and identified trees from forest plots around UMBC’s campus to be sent to an
     international database.
   * Collecting soil samples from forest plots around UMBC’s campus to be sent to an international database.
@@ -43,15 +43,16 @@ Work experience
   
 Service and leadership
 ======
-* President, Geography & Environmental Systems Council of Majors, May 2023 - Current
+* President, __Geography and Environmental Systems Council of Majors__, _May 2023 - Current_
   * Promoting the academic interests, social interests, and unity among students, faculty, and staff within the Geography & Environmental        Systems Department here at UMBC.
  
-* Secretary, Engineers Without Borders UMBC Chapter, Sept 2020 - Current
+* Secretary, __Engineers Without Borders UMBC Chapter__, _Sept 2020 - Current_
   * Facilitate general body meetings and aid in logistical practices to maintain chapter activities.
   * Current project on a stormwater management system for a local elementary school.
   * Collaborated with Habitats for Humanity Susquehanna to volunteer locally at house construction sites.
  
-* Ambassador Rank, Girl Scouts of the USA, Sept 2009 - May 2020 * Co-led 2019 spring encampment with the theme of “back-to-basics”, taught younger girls camping and survivalist
+* Ambassador Rank, __Girl Scouts of the USA__, _Sept 2009 - May 2020_
+  * Co-led 2019 spring encampment with the theme of “back-to-basics”, taught younger girls camping and survivalist
     skills.
   * Co-led 2019 spring encampment with the theme of “back-to-basics”, taught younger girls camping and survivalist
     skills.
