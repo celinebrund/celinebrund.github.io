@@ -11,9 +11,9 @@ redirect_from:
 
 Education
 ======
-* B.S. in Environmental Science and Geography, University of Maryland, Baltimore County (UMBC), _2024_
+* __B.S. in Environmental Science and Geography__, University of Maryland, Baltimore County (UMBC), _2024_
   * Geographic Information Science Certificate Program
-* High School Diploma and International Baccalaureate Diploma, Edgewood High School, _2020_
+* __High School Diploma__ and __International Baccalaureate Diploma__, Edgewood High School, _2020_
 
 Work experience
 ======
