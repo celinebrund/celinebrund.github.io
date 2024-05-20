@@ -1,6 +1,6 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Advanced Applications in GIS: Final Project"
+excerpt: "An analysis of different water metrics in order to determine a relationship between the water use designations of what stream the gauge is representing with the water quality indicators that the gauge can pick up at various locations around Maryland.<br/><img src='/images/500x300.png'>"
 collection: portfolio
 ---
 
