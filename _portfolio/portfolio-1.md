@@ -4,4 +4,896 @@ excerpt: "An analysis of different water metrics in order to determine a relatio
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+[<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Celine Brundridge">
+
+<title>Stream Water Quality and Use</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="finalpro_water_files/libs/clipboard/clipboard.min.js"></script>
+<script src="finalpro_water_files/libs/quarto-html/quarto.js"></script>
+<script src="finalpro_water_files/libs/quarto-html/popper.min.js"></script>
+<script src="finalpro_water_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="finalpro_water_files/libs/quarto-html/anchor.min.js"></script>
+<link href="finalpro_water_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="finalpro_water_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="finalpro_water_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="finalpro_water_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="finalpro_water_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Stream Water Quality and Use</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Celine Brundridge </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="github" class="level2">
+<h2 class="anchored" data-anchor-id="github">GitHub</h2>
+<p>GitHub website link: <a href="https://https://celinebrund.github.io/" class="uri">https://https://celinebrund.github.io/</a> GitHub website repository: <a href="https://github.com/celinebrund/celinebrund.github.io" class="uri">https://github.com/celinebrund/celinebrund.github.io</a> Final project portfolio page: <a href="https://celinebrund.github.io/portfolio/" class="uri">https://celinebrund.github.io/portfolio/</a></p>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The maintenance of water quality is a pervasive issue that every community faces. While water shifts across a watershed through vegetation, soil pores, streams, wetlands, and oceans (Black, 1997), it also shifts among the human landscape–across pavement, crop fields, industry, cities, homes, and other infrastructure with little resistance. Therefore, as it travels through our waterways it can pick up various pollutants, sediment, and other contaminants that affect the riverine ecosystem—as well as our health.</p>
+<p>In this project, I am analyzing all of these different water metrics in order to determine a relationship between the water use designations of what stream the gauge is representing with the water quality indicators that the gauge can pick up at various locations around Maryland.</p>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>Installing and loading these packages are necessary for data optimization throughout the rest of the script. R packages can be installed by searching it up on the “Packages” tab of RStudio and installing. Then, by using the function “library”, the library of the package can be loaded into the script for use. Short descriptions of each package is detailed next to the corresponding script line below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(tidyverse)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(sf)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(sp)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(dplyr)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(ggplot2)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(ggspatial)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to GEOS 3.11.2, GDAL 3.7.2, PROJ 9.3.0; sf_use_s2() is TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sp)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggspatial)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggspatial' was built under R version 4.3.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#census_api_key("492c835f63654b3b0b78a8674ac94e9411625187", install = TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="pulling-water-quality-and-classification-data" class="level2">
+<h2 class="anchored" data-anchor-id="pulling-water-quality-and-classification-data">Pulling water quality and classification data</h2>
+<p>Below I acquired the stream gauge data through the USGS, but had to consolidate and organize the data into a sheet for all gauges in Maryland by myself through Excel with the appropriate water quality indicators.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>streamPast19 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/streamData_past2019.csv"</span>, <span class="at">fileEncoding =</span> <span class="st">"ISO-8859-1"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(streamPast19)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 21
+Columns: 12
+$ Station.Number                                 &lt;int&gt; 1581920, 1589290, 14910…
+$ Station.name                                   &lt;chr&gt; "&nbsp;GUNPOWDER FALLS NEAR …
+$ Date.Time                                      &lt;chr&gt; "&nbsp;05/18/19 12:00 EDT&nbsp;",…
+$ Temperature..water..deg.C                      &lt;dbl&gt; 12.0, 17.7, NA, NA, 13.…
+$ Specific.conductance..wat.unf.uS.cm.at.25.degC &lt;int&gt; NA, 479, NA, NA, NA, 36…
+$ pH..water..unfltrd.field..std.units            &lt;dbl&gt; NA, NA, NA, NA, NA, NA,…
+$ Turbidity..IR.LED.light..det.ang.90.deg..FNU   &lt;dbl&gt; NA, 1.7, NA, NA, NA, NA…
+$ Dissolved.oxygen..mg.L                         &lt;dbl&gt; NA, NA, NA, NA, NA, NA,…
+$ Nitrate.plus.nitrite.water..in.situ.mg.L.as    &lt;lgl&gt; NA, NA, NA, NA, NA, NA,…
+$ MDE.Use.Class                                  &lt;chr&gt; "III-P", "I ", "I ", "I…
+$ LatitudeN                                      &lt;dbl&gt; 39.61906, 39.36158, 38.…
+$ LongitudeW                                     &lt;dbl&gt; -76.69036, -76.76175, -…</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>streamPresent24 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/streamData_present2024.csv"</span>, <span class="at">fileEncoding =</span> <span class="st">"ISO-8859-1"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(streamPresent24)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 21
+Columns: 12
+$ Station.Number                                 &lt;int&gt; 1581920, 1589290, 14910…
+$ Station.name                                   &lt;chr&gt; "&nbsp;GUNPOWDER FALLS NEAR …
+$ Date.Time                                      &lt;chr&gt; "&nbsp;05/18/24 12:00 EDT&nbsp;",…
+$ Temperature..water..deg.C                      &lt;dbl&gt; 11.4, 16.8, 17.2, 17.7,…
+$ Specific.conductance..wat.unf.uS.cm.at.25.degC &lt;int&gt; NA, 337, 141, 273, NA, …
+$ pH..water..unfltrd.field..std.units            &lt;dbl&gt; NA, 7.5, 7.0, 8.0, NA, …
+$ Turbidity..IR.LED.light..det.ang.90.deg..FNU   &lt;dbl&gt; NA, 10.6, 8.4, 7.8, NA,…
+$ Dissolved.oxygen..mg.L                         &lt;dbl&gt; NA, NA, 7.9, 9.1, NA, N…
+$ Nitrate.plus.nitrite.water..in.situ.mg.L.as    &lt;dbl&gt; NA, NA, 1.77, NA, NA, N…
+$ MDE.Use.Class                                  &lt;chr&gt; "III-P", "I ", "I ", "I…
+$ LatitudeN                                      &lt;dbl&gt; 39.61906, 39.36158, 38.…
+$ LongitudeW                                     &lt;dbl&gt; -76.69036, -76.76175, -…</code></pre>
+</div>
+</div>
+<p>The water quality data was taken from the present (May 2024) and the past (May 2019). I chose 2019 in particular as January 2019 was the last update of these state designations.</p>
+<p>Since the data was manually inputted, there was only longitude and latitude data to assign the points of the gauges. To make this data spatially viable, I georeferenced the coordinates and transformed the data from NAD83 to WGS84 for both 2019 and 2024 layers.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sf object</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>streamPast19_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(streamPast19, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"LongitudeW"</span>, <span class="st">"LatitudeN"</span>), <span class="at">crs =</span> <span class="dv">4269</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform to EPSG:4326 for plotting</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>streamPast19_geo <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(streamPast19_geo, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sf object</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(streamPast19_geo<span class="sc">$</span>geometry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Geometry set for 6 features 
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -77.54311 ymin: 38.99719 xmax: -75.78581 ymax: 39.63008
+Geodetic CRS:  WGS 84
+First 5 geometries:</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>POINT (-76.69036 39.61906)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>POINT (-76.76175 39.36158)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>POINT (-75.78581 38.99719)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>POINT (-77.54311 39.27358)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>POINT (-77.45528 39.63008)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(streamPast19_geo<span class="sc">$</span>geometry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="finalpro_water_files/figure-html/datacoordinate1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sf object</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>streamPresent24_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(streamPresent24, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"LongitudeW"</span>, <span class="st">"LatitudeN"</span>), <span class="at">crs =</span> <span class="dv">4269</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform to EPSG:4326 for plotting</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>streamPresent24_geo <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(streamPresent24_geo, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sf object</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(streamPresent24_geo<span class="sc">$</span>geometry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Geometry set for 6 features 
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -77.54311 ymin: 38.99719 xmax: -75.78581 ymax: 39.63008
+Geodetic CRS:  WGS 84
+First 5 geometries:</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>POINT (-76.69036 39.61906)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>POINT (-76.76175 39.36158)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>POINT (-75.78581 38.99719)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>POINT (-77.54311 39.27358)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>POINT (-77.45528 39.63008)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(streamPresent24_geo<span class="sc">$</span>geometry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="finalpro_water_files/figure-html/datacoordinate2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>I acquired the water use classification data from the Maryland Department of the Environment. While there are three different layers accounting for the many different water bodies of Maryland, I am only taking from the Rivers and Streams layer.</p>
+<p>Maryland’s Designated Uses for Surface Waters, last updated in January 2019, displays the use classes assigned to Maryland’s surface waters (rivers, impoundments, and tidal waters) as promulgated in Code of Maryland Regulations (COMAR) Section 26.08.02.08. Maryland classifies surface water bodies according to use classes which describe the suite of specific designated uses or goals for that water body.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the path to the GDB and the layer name</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>gdb_path <span class="ot">&lt;-</span> <span class="st">"../data/MD_Surface_Water_Use_Classes_2019.gdb"</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>layer_name <span class="ot">&lt;-</span> <span class="st">"Rivers_Streams_UC_2019"</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the layer from the GDB</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>allStreams <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> gdb_path, <span class="at">layer =</span> layer_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `Rivers_Streams_UC_2019' from data source 
+  `C:\Users\celin\OneDrive\Documents\Ges486\Final Project\final_project\data\MD_Surface_Water_Use_Classes_2019.gdb' 
+  using driver `OpenFileGDB'
+Simple feature collection with 82721 features and 18 fields
+Geometry type: MULTILINESTRING
+Dimension:     XY
+Bounding box:  xmin: 185248.2 ymin: 28148.16 xmax: 569508.3 ymax: 230941
+Projected CRS: NAD83 / Maryland</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(allStreams)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 82,721
+Columns: 19
+$ TARGET_FID   &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17…
+$ OBJECTID     &lt;int&gt; 1, 3, 4, 5, 7, 8, 9, 10, 11, 13, 18, 19, 20, 21, 22, 26, …
+$ Permanent_   &lt;chr&gt; "53998810", "112196834", "45644213", "57477459", "1121950…
+$ FDate        &lt;dttm&gt; 2012-03-09 19:00:00, 2012-03-08 19:00:00, 2012-03-02 19:…
+$ GNIS_ID      &lt;chr&gt; " ", " ", " ", " ", " ", " ", " ", " ", "00592804", " ", …
+$ GNIS_Name    &lt;chr&gt; " ", " ", " ", " ", " ", " ", " ", " ", "Little Creek", "…
+$ LengthKM     &lt;dbl&gt; 0.1530000, 1.2690000, 0.0080000, 2.7900000, 0.2273128, 0.…
+$ ReachCode    &lt;chr&gt; "02070011003203", "02060002003019", "02070002001151", "02…
+$ FType        &lt;int&gt; 460, 460, 558, 460, 460, 460, 460, 460, 336, 336, 460, 46…
+$ FCode        &lt;int&gt; 46003, 46003, 55800, 46006, 46006, 46006, 46006, 46003, 3…
+$ STream_Nam   &lt;chr&gt; "Unnamed Tributary to Budds Creek", " ", "Unnamed Tributa…
+$ Notes        &lt;chr&gt; "UT to Budds Creek, b/t headwaters and confluence w/ Burr…
+$ Exist_Use    &lt;chr&gt; "Not Applicable", "Not Applicable", "Not Applicable", "No…
+$ Des_Use      &lt;chr&gt; "I", "I", "III-P", "IV-P", "I", "III-P", "III-P", "I", "I…
+$ Length_m     &lt;dbl&gt; 152.26465, 321.39505, 7.92423, 2774.51920, 229.35995, 659…
+$ HUC12        &lt;chr&gt; "020700110502", "020600020402", "020700020506", "02050306…
+$ HUC8         &lt;chr&gt; "02070011", "02060002", "02070002", "02050306", "02060002…
+$ Shape_Length &lt;dbl&gt; 152.264702, 321.394944, 7.924211, 2774.519175, 229.359917…
+$ Shape        &lt;MULTILINESTRING [m]&gt; MULTILINESTRING ((412684 84..., MULTILINE…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(allStreams[,<span class="dv">14</span>], <span class="at">key.width =</span> <span class="fu">lcm</span>(<span class="fl">2.03</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="finalpro_water_files/figure-html/datapull3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/DesignatedUse_Table.jpg" class="img-fluid figure-img"></p>
+<figcaption>Temperature</figcaption>
+</figure>
+</div>
+<p>Here are what the water surface classifications allude to. The use of a water body based on these categories are multi-purpose and defintetly overlap, but each classification has at least one distinguishing use from the rest.</p>
+<p>Below I acquired the Maryland county boundaries through the Maryland Government GIS Data Catalog to distinguish boundaries between counties as a reference areal unit.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>mdBoundaries <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"../data/Maryland_Physical_Boundaries_-_County_Boundaries_(Detailed).geojson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `BNDY_CountyPhyBoundaryDetailed_SHA' from data source 
+  `C:\Users\celin\OneDrive\Documents\Ges486\Final Project\final_project\data\Maryland_Physical_Boundaries_-_County_Boundaries_(Detailed).geojson' 
+  using driver `GeoJSON'
+Simple feature collection with 24 features and 9 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -79.4873 ymin: 37.89358 xmax: -75.0492 ymax: 39.72287
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(mdBoundaries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 24
+Columns: 10
+$ OBJECTID     &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17…
+$ COUNTY       &lt;chr&gt; "Allegany", "Anne Arundel", "Baltimore", "Baltimore City"…
+$ DISTRICT     &lt;dbl&gt; 6, 5, 4, 0, 5, 2, 7, 2, 5, 1, 7, 6, 4, 7, 2, 3, 3, 2, 1, …
+$ COUNTY_FIP   &lt;int&gt; 1, 3, 5, 510, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, …
+$ COUNTYNUM    &lt;int&gt; 1, 2, 3, 24, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16…
+$ CREATION_D   &lt;dttm&gt; 2010-01-27 19:00:00, 2006-04-17 20:00:00, 2006-10-08 20:…
+$ LAST_UPDAT   &lt;dttm&gt; 2010-01-27 19:00:00, 2006-04-17 20:00:00, 2006-10-08 20:…
+$ Shape_Length &lt;dbl&gt; 3.814949, 10.040214, 9.470194, 1.978908, 3.576389, 3.0780…
+$ Shape_Area   &lt;dbl&gt; 0.11502849, 0.11148263, 0.16250630, 0.02198736, 0.0573503…
+$ geometry     &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-78.34284 3..., MULTIPOLYGON…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mdBoundaries[,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="finalpro_water_files/figure-html/datapull4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="statistical-analyses-in-geoda" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-analyses-in-geoda">Statistical analyses in GeoDa</h2>
+<p>Below I export the two georeferenced datasets for use in GeoDa, a free software package that conducts spatial data analysis, geovisualization, spatial autocorrelation and spatial modeling.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#save the shapefile and upload to QGIS, uncomment when exporting out to ensure it only runs once when rendering</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># st_write(streamPast19_geo, "../data/geoda_stream19.geojson", delete_layer = TRUE, delete_dsn = TRUE)</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># st_write(streamPresent24_geo, "../data/geoda_stream24.geojson", delete_layer = TRUE, delete_dsn = TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>By exploring the data in GeoDa, below we calculate Univariate Local Moran’s I over multiple water quality variables and time frames to determine the most spatially auto correlated variable. The Univariate Local Moran’s I (under space tab), which is a local spatial autocorrelation statistic that groups neighboring features with similarly high or low attribute values. Not to be confused with Global Moran’s I, it gives multiple local values indicating spatial patterns or anomalies at the local level, which will help distinguish hot spots, cold spots, and spatial outliers.</p>
+<p>A positive Moran’s I index value indicates tendency toward clustering, while a negative Moran’s I index value indicates tendency toward dispersion</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/Morans2_temp9999.png" class="img-fluid figure-img"></p>
+<figcaption>Temperature</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/Morans3_conduct9999.png" class="img-fluid figure-img"></p>
+<figcaption>Specific Conductance</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/Morans4_turbidity999.png" class="img-fluid figure-img"></p>
+<figcaption>Turbidity</figcaption>
+</figure>
+</div>
+<p>Here, we find turbidity to have the most statistically significant clustering, with a Moran’s I of 0.275.</p>
+</section>
+<section id="visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="visualizations">Visualizations</h2>
+<p>Below I plot all variables pulled below into one cohesive map to get an overall visual.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mdBoundaries, <span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="fu">alpha</span>(<span class="st">"lightgrey"</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> allStreams, <span class="fu">aes</span>(<span class="at">color =</span> Des_Use, <span class="at">fill =</span> Des_Use)) <span class="sc">+</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Stream Water Quality and Use"</span>) <span class="sc">+</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#rename legend and separate the legend entried into three columns </span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">"Designated Use Category"</span>),</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">"Designated Use Category"</span>)) <span class="sc">+</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#place the legend on the bottom of the map and set the legend text size</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>), <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> streamPresent24_geo, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"lightgrey"</span>) <span class="sc">+</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">#insert scalebar</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="fu">st_crs</span>(<span class="dv">4326</span>)) <span class="sc">+</span> <span class="co">#project the data so that measurements in the scale bar make sense</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"bl"</span>, <span class="at">width_hint =</span> <span class="fl">0.25</span>) <span class="sc">+</span> <span class="co">#tl = top left, could not figure out how to change the units to mi, plot_unit = "mi" did not work</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">#insert north arrow</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"tr"</span>, <span class="at">which_north =</span> <span class="st">"true"</span>,</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">pad_x =</span> <span class="fu">unit</span>(<span class="fl">0.05</span>, <span class="st">"in"</span>), <span class="at">pad_y =</span> <span class="fu">unit</span>(<span class="fl">0.05</span>, <span class="st">"in"</span>),</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">height =</span> <span class="fu">unit</span>(<span class="fl">0.4</span>, <span class="st">"in"</span>), <span class="at">width =</span> <span class="fu">unit</span>(<span class="fl">0.25</span>, <span class="st">"in"</span>),</span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">style =</span> north_arrow_fancy_orienteering)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="finalpro_water_files/figure-html/plot1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/DesignatedUse_Table.jpg" class="img-fluid figure-img"></p>
+<figcaption>Temperature</figcaption>
+</figure>
+</div>
+<p>I have the table attached again here for easy comparison of the designated use category to qualitative data.</p>
+</section>
+<section id="further-visualization-in-qgis" class="level2">
+<h2 class="anchored" data-anchor-id="further-visualization-in-qgis">Further visualization in QGIS</h2>
+<p>With some newfound statistical findings and the data looking clean, further visualizations can be created in QGIS.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#save the shapefile and upload to QGIS, uncomment when exporting out to ensure it only runs once when rendering</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># st_write(streamPast19_geo, "../data/qgis_stream19.geojson", delete_layer = TRUE, delete_dsn = TRUE)</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co"># st_write(streamPresent24_geo, "../data/qgis_stream24.geojson", delete_layer = TRUE, delete_dsn = TRUE)</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># st_write(allStreams, "../data/qgis_allStreams.geojson", delete_layer = TRUE, delete_dsn = TRUE)</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># st_write(mdBoundaries, "../data/qgis_mdBoundaries.geojson", delete_layer = TRUE, delete_dsn = TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Below is a map with all three variables in QGIS, but zoomed into an area of interest between Montgomery County and Prince George’s County, with the biggest cluster of gauges in Maryland.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/QGIS_montPG1.png" class="img-fluid figure-img"></p>
+<figcaption>Temperature</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/DesignatedUse_Table.jpg" class="img-fluid figure-img"></p>
+<figcaption>Temperature</figcaption>
+</figure>
+</div>
+<p>I have the table attached again here for easy comparison of the designated use category to qualitative data.</p>
+</section>
+<section id="discussion-and-reflection" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-and-reflection">Discussion and Reflection</h2>
+<p>There was much less gauge data than I was expecting, as I was expecting there to be more gauges in Maryland–at least one in every county, but that was not the case. While they do mark critical points of downstream flow and tributaries, I believe more gauges will be necessary in order to monitor water quality change on a consistent basis.</p>
+<p>The results available are heavily influenced by the gauges present in the area. As you can see from the map the reported gauges are in a constricted region which limits the evaluation of the water quality in a zone to zone basis of what the water is being used for. Each color defines a usage and most gauges appear exclusively in the I (yellow) region. Knowing the true effects of different water uses on water quality would require more in depth resources and more accessibility of gauges in the water to see if their is use specific correlation, especially considering water is not stagnant.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>Uploading finalpro_water.html…]()
+
