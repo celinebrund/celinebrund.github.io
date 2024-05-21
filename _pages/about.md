@@ -9,7 +9,7 @@ redirect_from:
 
 About me
 ======
-I am interested in the intersectionality of human and natural systems, hydrology, geomorphology, sustainability, and environmental justice/services all through the use of Geographic Information Systems (GIS).
+I am interested in the intersectionality of human and natural systems, hydrology, geomorphology, natural resources, sustainability, and environmental justice/services all through the use of Geographic Information Systems (GIS). My interests are ever-expanding.
 
 As a dedicated data analyst, I firmly subscribe to the belief that stories form the essence of our professional journeys. While inherently subjective, these narratives shape the paths that lead us to our present vocations. I am confident that my skills and experience extend beyond the mere generation of data products; they serve as a powerful tool for crafting compelling stories that authentically represent and inspire communities.
 
