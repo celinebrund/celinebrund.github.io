@@ -63,7 +63,7 @@ collection: portfolio
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sf object</span></span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(streamPast19_geo<span class="sc">$</span>geometry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<br/><img src='/images/watqual_may19'" alt="Water Quality May 2019">
+<br/><img src='/images/watqual_may19.png'" alt="Water Quality May 2019">
 
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sf object</span></span>
@@ -75,7 +75,7 @@ collection: portfolio
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sf object</span></span>
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(streamPresent24_geo<span class="sc">$</span>geometry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<br/><img src='/images/watqual_may24'" alt="Water Quality May 2024">
+<br/><img src='/images/watqual_may24.png'" alt="Water Quality May 2024">
 
 <p>I acquired the water use classification data from the Maryland Department of the Environment. While there are three different layers accounting for the many different water bodies of Maryland, I am only taking from the Rivers and Streams layer.</p>
 <p>Maryland’s Designated Uses for Surface Waters, last updated in January 2019, displays the use classes assigned to Maryland’s surface waters (rivers, impoundments, and tidal waters) as promulgated in Code of Maryland Regulations (COMAR) Section 26.08.02.08. Maryland classifies surface water bodies according to use classes which describe the suite of specific designated uses or goals for that water body.</p>
@@ -116,10 +116,10 @@ Temperature
 <br/><img src='/images/Morans2_temp9999.png'" alt="Temperature">
 
 Specific Conductance
-<br/><img src='/images/Morans3_conduct9999'" alt="Specific Conductance">
+<br/><img src='/images/Morans3_conduct9999.png'" alt="Specific Conductance">
 
 Turbidity
-<br/><img src='/images/Morans4_turbidity999'" alt="Turbidity">
+<br/><img src='/images/Morans4_turbidity999.png'" alt="Turbidity">
 
 <p>Here, we find turbidity to have the most statistically significant clustering, with a Moran’s I of 0.275. As turbidity appears to be the most spatially autocorrelated, we will use that indicator in our visualizations. Spatial autocorrelation refers to the degree to which one object is similar to other nearby objects in a spatial distribution. Understanding the spatial significance of what the stream gauges are measuring is a step towards defining the relationship between water use designations and water quality.</p>
 <p>Note that there is not a lot of gauges, and therefore not a lot of data. I believe that more data points would produce a higher degree of accuracy.</p>
