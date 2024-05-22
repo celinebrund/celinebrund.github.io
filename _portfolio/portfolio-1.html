@@ -63,7 +63,7 @@ Since the data was manually inputted, there was only longitude and latitude data
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sf object</span></span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(streamPast19_geo<span class="sc">$</span>geometry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Water Quality May 2019">
+<br/><img src='/images/watqual_may19'" alt="Water Quality May 2019">
 
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sf object</span></span>
@@ -75,7 +75,7 @@ Since the data was manually inputted, there was only longitude and latitude data
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sf object</span></span>
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(streamPresent24_geo<span class="sc">$</span>geometry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Water Quality May 2024">
+<br/><img src='/images/watqual_may24'" alt="Water Quality May 2024">
 
 I acquired the water use classification data from the Maryland Department of the Environment. While there are three different layers accounting for the many different water bodies of Maryland, I am only taking from the Rivers and Streams layer.</p>
 Maryland’s Designated Uses for Surface Waters, last updated in January 2019, displays the use classes assigned to Maryland’s surface waters (rivers, impoundments, and tidal waters) as promulgated in Code of Maryland Regulations (COMAR) Section 26.08.02.08. Maryland classifies surface water bodies according to use classes which describe the suite of specific designated uses or goals for that water body.</p>
@@ -87,7 +87,7 @@ Maryland’s Designated Uses for Surface Waters, last updated in January 2019, d
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the layer from the GDB</span></span>
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>allStreams <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> gdb_path, <span class="at">layer =</span> layer_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Rivers and Streams">
+<br/><img src='/images/rivers_streams.png'" alt="Rivers and Streams">
 
 <br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
 
@@ -100,7 +100,7 @@ Below I acquired the Maryland county boundaries through the Maryland Government 
 
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mdBoundaries[,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="MD Boundaries">
+<br/><img src='/images/md_bound.png'" alt="MD Boundaries">
 
 <h2>Statistical analyses in GeoDa</h2>
 Below I export the two georeferenced datasets for use in GeoDa, a free software package that conducts spatial data analysis, geovisualization, spatial autocorrelation and spatial modeling.</p>
@@ -146,7 +146,7 @@ Below I plot all variables pulled below into one cohesive map to get an overall 
 <span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">height =</span> <span class="fu">unit</span>(<span class="fl">0.4</span>, <span class="st">"in"</span>), <span class="at">width =</span> <span class="fu">unit</span>(<span class="fl">0.25</span>, <span class="st">"in"</span>),</span>
 <span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">style =</span> north_arrow_fancy_orienteering)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Stream Water Quality and Use">
+<br/><img src='/images/stream_watqual_use.png'" alt="Stream Water Quality and Use">
 
 <br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
 
@@ -157,6 +157,8 @@ Below is an interactive map for further exploration at different scales.</p>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mapview(allStreams, layer.name = "Rivers and Streams", label = "Des_Use", zcol = "Des_Use", lwd = 2) +</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   mapview(streamPresent24_geo, layer.name = "Stream Gauge Turbidity", label = "Turbidity..IR.LED.light..det.ang.90.deg..FNU", col.regions = "black", color = "black", alpha.regions = 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+
+<br/><img src='/images/interactive.png'" alt="Interactive Map">
 
 <h2>Further visualization in QGIS</h2>
 With some newfound statistical findings and the data looking clean, further visualizations can be created in QGIS.</p>
@@ -169,7 +171,7 @@ With some newfound statistical findings and the data looking clean, further visu
 </div>
 Below is a map with all three variables in QGIS, but zoomed into an area of interest between Montgomery County and Prince George’s County, with the biggest cluster of gauges in Maryland.
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="QGIS Map of Turbidity Level Change with Water Use Designations in Montgomery and Prince George's County Streams">
+<br/><img src='/images/QGIS_montPG1.png'" alt="QGIS Map of Turbidity Level Change with Water Use Designations in Montgomery and Prince George's County Streams">
 
 <br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
 
