@@ -6,10 +6,6 @@ collection: portfolio
 
 <title>Stream Water Quality and Use</title>
 
-GitHub website link: <a href="https://https://celinebrund.github.io/" class="uri">https://https://celinebrund.github.io/</a> 
-GitHub website repository: <a href="https://github.com/celinebrund/celinebrund.github.io" class="uri">https://github.com/celinebrund/celinebrund.github.io</a> 
-Final project portfolio page: <a href="https://celinebrund.github.io/portfolio/" class="uri">https://celinebrund.github.io/portfolio/</a>
-
 <h2>Introduction and Background</h2>
 The maintenance of water quality is a pervasive issue that every community faces. While water shifts across a watershed through vegetation, soil pores, streams, wetlands, and oceans (Black, 1997), it also shifts among the human landscape–across pavement, crop fields, industry, cities, homes, and other infrastructure with little resistance. Therefore, as it travels through our waterways it can pick up various pollutants, sediment, and other contaminants that affect the riverine ecosystem—as well as our health.</p>
 I am going to be working a job in water resources after I graduate, therefore working with more water data, policy/regulations, and becoming more familiar with Maryland’s data hubs will be important moving forward. In my other class, watershed resources and management, I am currently writing a paper on how the ecological disturbance of urbanization alters hydrologic and geomorphic watershed response, with methods and policy to properly manage it. This project treads a similar line, focusing on water use designations and the chemical responses instead–further expanding my knowledge of watershed management.</p>
@@ -24,6 +20,7 @@ Water use designations are where each water body is assigned a use class that ou
 <li>Use Class III-P: Nontidal Cold Water and Public Water Supply</li>
 <li>Use Class IV: Recreational Trout Waters</li>
 <li>Use Class IV-P: Recreational Trout Waters and Public Water Supply</li>
+
 
 In cases where the current designation does not reflect the actual conditions, the Maryland Department of the Environment (MDE) may pursue use redesignation to better protect existing uses. For example, a stream currently classified under Use Class I may be reclassified to Use Class III if it supports cold-water species. Such redesignations are documented and proposed during the Triennial Review.</p>
 Water quality refers to the chemical, physical, and biological characteristics of water, typically in relation to its suitability for a specific purpose such as drinking, swimming, or supporting aquatic life. The United States Geological Survey (USGS) is an important resource for finding consistent past and present water quality data. While their data portal contains multitudes of water quality variables, their primary variables that were utilized for this project are temperature, specific conductance, pH, turbidity, dissolved oxygen, and nitrate + nitrite concentrations (United States Geological Survey, 2024). These indicators are defined below:</p>
@@ -45,8 +42,6 @@ Installing and loading these packages are necessary for data optimization throug
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(ggplot2)</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(ggspatial)</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(mapview)</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <h2>Pulling water quality and classification data</h2>
 Below I acquired the stream gauge data through the USGS, but had to consolidate and organize the data into a sheet for all gauges in Maryland by myself through Excel with the appropriate water quality indicators.
@@ -67,13 +62,9 @@ Since the data was manually inputted, there was only longitude and latitude data
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sf object</span></span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(streamPast19_geo<span class="sc">$</span>geometry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div>
-<figure class="figure">
-<img src="finalpro_water_files/figure-html/datacoordinate1-1.png" class="img-fluid figure-img" width="672">
-</figure>
-</div>
-</div>
-</div>
+
+<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Water Quality May 2019">
+
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sf object</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>streamPresent24_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(streamPresent24, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"LongitudeW"</span>, <span class="st">"LatitudeN"</span>), <span class="at">crs =</span> <span class="dv">4269</span>)</span>
@@ -84,7 +75,7 @@ Since the data was manually inputted, there was only longitude and latitude data
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sf object</span></span>
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(streamPresent24_geo<span class="sc">$</span>geometry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
+<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Water Quality May 2024">
 
 I acquired the water use classification data from the Maryland Department of the Environment. While there are three different layers accounting for the many different water bodies of Maryland, I am only taking from the Rivers and Streams layer.</p>
 Maryland’s Designated Uses for Surface Waters, last updated in January 2019, displays the use classes assigned to Maryland’s surface waters (rivers, impoundments, and tidal waters) as promulgated in Code of Maryland Regulations (COMAR) Section 26.08.02.08. Maryland classifies surface water bodies according to use classes which describe the suite of specific designated uses or goals for that water body.</p>
@@ -96,7 +87,7 @@ Maryland’s Designated Uses for Surface Waters, last updated in January 2019, d
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the layer from the GDB</span></span>
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>allStreams <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> gdb_path, <span class="at">layer =</span> layer_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
+<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Rivers and Streams">
 
 <br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
 
@@ -109,7 +100,7 @@ Below I acquired the Maryland county boundaries through the Maryland Government 
 
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mdBoundaries[,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
+<br/><img src='/images/DesignatedUse_Table.jpg'" alt="MD Boundaries">
 
 <h2>Statistical analyses in GeoDa</h2>
 Below I export the two georeferenced datasets for use in GeoDa, a free software package that conducts spatial data analysis, geovisualization, spatial autocorrelation and spatial modeling.</p>
@@ -121,11 +112,14 @@ Below I export the two georeferenced datasets for use in GeoDa, a free software 
 By exploring the data in GeoDa, below we calculate Univariate Local Moran’s I over multiple water quality variables and time frames to determine the most spatially auto correlated variable. The Univariate Local Moran’s I (under space tab), which is a local spatial autocorrelation statistic that groups neighboring features with similarly high or low attribute values. Not to be confused with Global Moran’s I, it gives multiple local values indicating spatial patterns or anomalies at the local level, which will help distinguish hot spots, cold spots, and spatial outliers.</p>
 A positive Moran’s I index value indicates tendency toward clustering, while a negative Moran’s I index value indicates tendency toward dispersion</p>
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
+Temperature
+<br/><img src='/images/Morans2_temp9999.png'" alt="Temperature">
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
+Specific Conductance
+<br/><img src='/images/Morans3_conduct9999'" alt="Specific Conductance">
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
+Turbidity
+<br/><img src='/images/Morans4_turbidity999'" alt="Turbidity">
 
 Here, we find turbidity to have the most statistically significant clustering, with a Moran’s I of 0.275. As turbidity appears to be the most spatially autocorrelated, we will use that indicator in our visualizations. Spatial autocorrelation refers to the degree to which one object is similar to other nearby objects in a spatial distribution. Understanding the spatial significance of what the stream gauges are measuring is a step towards defining the relationship between water use designations and water quality.</p>
 Note that there is not a lot of gauges, and therefore not a lot of data. I believe that more data points would produce a higher degree of accuracy.</p>
@@ -152,7 +146,7 @@ Below I plot all variables pulled below into one cohesive map to get an overall 
 <span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">height =</span> <span class="fu">unit</span>(<span class="fl">0.4</span>, <span class="st">"in"</span>), <span class="at">width =</span> <span class="fu">unit</span>(<span class="fl">0.25</span>, <span class="st">"in"</span>),</span>
 <span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">style =</span> north_arrow_fancy_orienteering)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
+<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Stream Water Quality and Use">
 
 <br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
 
@@ -175,12 +169,26 @@ With some newfound statistical findings and the data looking clean, further visu
 </div>
 Below is a map with all three variables in QGIS, but zoomed into an area of interest between Montgomery County and Prince George’s County, with the biggest cluster of gauges in Maryland.
 
-<br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
+<br/><img src='/images/DesignatedUse_Table.jpg'" alt="QGIS Map of Turbidity Level Change with Water Use Designations in Montgomery and Prince George's County Streams">
 
 <br/><img src='/images/DesignatedUse_Table.jpg'" alt="Designated Water Use Table">
 
 I have the table attached again here for easy comparison of the designated use category to qualitative data.
 
-<h2>Discussion and Reflection</h2>
+<h2>Discussion</h2>
 There was much less gauge data than I was expecting, as I was expecting there to be more gauges in Maryland–at least one in every county, but that was not the case. While they do mark critical points of downstream flow and tributaries, I believe more gauges will be necessary in order to monitor water quality change on a consistent basis.</p>
 The results available are heavily influenced by the gauges present in the area. As you can see from the map the reported gauges are in a constricted region which limits the evaluation of the water quality in a zone to zone basis of what the water is being used for. Each color defines a usage and most gauges appear exclusively in the I (yellow) region. Knowing the true effects of different water uses on water quality would require more in depth resources and more accessibility of gauges in the water to see if their is use specific correlation, especially considering water is not stagnant.</p>
+
+<h2>Reflection</h2>
+What went well and didn’t go well for this project? What would you do differently next time?
+
+* The data collection was relatively easy on the Maryland data portals. It was a bit difficult to navigate the USGS data looking at the past. There was also not a lot of data in general as there was a small number of stream gauges that did not record all of the water quality indicators I had sought to assess–measurement times were a bit inconsistent on their end.
+* I realized that with little gauge data it was difficult to make more substantial claims. I already had manually input the data, so it was too late to find other data indicators. If I had more time I would have tried to accumulate more water quality data/increase the sample size.
+* There is a function in ArcOnline called “Summarize within” that perfectly aggregates the stream water use designation data into the polygon boundaries of Maryland counties–showing the most prominent water use class for that county, as well as the percentage of each water use class that comprises the county. Unfortunately, I could not figure out a QGIS or R equivalent for this so I could not use that data for the final project as I intended.
+* A lot of the work in this class I have been applying to my job. I could have made it easier on myself and did my final project on indicators I have already coded out and calculated–but I wanted to work with water data, something I will be working with closely in the future.
+
+What went well and didn’t go well in the class? What would you have liked to have learned?
+
+* I would have liked to learn more about GitHub–navigation and website building. Perhaps I am just having a hard time comprehending all of the functions that we were able to go through in class–but more opportunity to practice is always beneficial.
+* I think it would have been nice to have the final project done incrementally throughout the semester–such as having the proposal due earlier, and having graded increments every couple weeks–methodology, analysis, conclusion, publishing, etc.
+* I think all of the technical practice and functionality was extremely helpful, as I have gained more comfort with R along with other useful software for statistical analysis. I really appreciated your patience and flexibility throughout the semester, and this was very dense material and concepts we have worked with. 
